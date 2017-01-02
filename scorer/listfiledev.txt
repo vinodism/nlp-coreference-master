@@ -1,0 +1,15 @@
+scorer/dev/b1.crf
+scorer/dev/b2.crf
+scorer/dev/b3.crf
+scorer/dev/b4.crf
+scorer/dev/b5.crf
+scorer/dev/b6.crf
+scorer/dev/b7.crf
+scorer/dev/b8.crf
+scorer/dev/b9.crf
+scorer/dev/b10.crf
+scorer/dev/a8.crf
+scorer/dev/a9.crf
+scorer/dev/a10.crf
+scorer/dev/a11.crf
+scorer/dev/a12.crf

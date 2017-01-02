@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><TXT>
+  891003-0025. 
+ = 891003 
+ 891003-0025. 
+ McDonnell <COREF ID="X2" REF="2">Douglas</COREF>
+@  Gets $98.9 Million
+@  <COREF ID="X6" REF="3">Air</COREF> <COREF ID="X7" REF="3">Force</COREF> <COREF ID="X8" REF="3">Contract</COREF> 
+ 10/03/89 
+ WALL STREET JOURNAL (J) 
+ MD ROK BA TXT RLM RTN IBM LOR 
+ DEFENSE DEPARTMENT (DEF) 
+ WASHINGTON  
+
+
+ <COREF ID="2" REF="X2">McDonnell Douglas Corp.</COREF> was given a <COREF ID="3" REF="X8">$98.9 million Air Force contract</COREF> for F-15 <COREF ID="X27" REF="12">aircraft</COREF> parts. 
+
+
+ Rockwell International <COREF ID="X31" REF="2">Corp.</COREF> won a $73.3 million <COREF ID="X32" REF="3">Air</COREF> <COREF ID="X33" REF="3">Force</COREF> <COREF ID="X34" REF="3">contract</COREF> for B-1B <COREF ID="X35" REF="12">aircraft</COREF> repair. 
+
+
+ Aerojet General <COREF ID="X39" REF="2">Corp.</COREF> was awarded $52 million in contracts for <COREF ID="6" REF="3">Air Force</COREF> satellite launch support and <COREF ID="X43" REF="8">Army</COREF> space boosters. 
+
+
+ A joint venture of <COREF ID="X47" REF="10">Boeing</COREF> <COREF ID="X48" REF="X62">Co.</COREF> and Bell Helicopter Textron <COREF ID="X52" REF="7">Inc.</COREF>, <COREF ID="7" REF="X52">a unit of Textron Inc.</COREF>, won a $38 million <COREF ID="X55" REF="17">Navy</COREF> <COREF ID="X56" REF="3">contract</COREF> for V-22 <COREF ID="X58" REF="12">aircraft</COREF> development. 
+
+
+ Reynolds Metals <COREF ID="X62" REF="X48">Co.</COREF> got a $32.2 million <COREF ID="8" REF="9">Army</COREF> <COREF ID="X63" REF="3">contract</COREF> for pipe parts. 
+
+
+ Avco <COREF ID="X67" REF="2">Corp.</COREF> was issued a $24.6 million <COREF ID="9" REF="8">Army</COREF> <COREF ID="X68" REF="3">contract</COREF> for helicopter engines. 
+
+
+ <COREF ID="10" REF="X47">Boeing</COREF> got a $20.5 million <COREF ID="11" REF="6">Air Force</COREF> <COREF ID="X71" REF="3">contract</COREF> for <COREF ID="12" REF="X58">B-1B aircraft repair</COREF>. 
+
+
+ Bamsi <COREF ID="X73" REF="7">Inc.</COREF> received an $18.7 million <COREF ID="13" REF="9">Army</COREF> <COREF ID="X74" REF="3">contract</COREF> for installation support. 
+
+
+ Tracor <COREF ID="X77" REF="7">Inc.</COREF> received a $17.6 million <COREF ID="14" REF="11">Air Force</COREF> <COREF ID="X78" REF="3">contract</COREF> for drone <COREF ID="X79" REF="12">aircraft</COREF> and <COREF ID="X80" REF="12">aircraft</COREF> electronics. 
+
+
+ Raytheon <COREF ID="X83" REF="X62">Co.</COREF> was awarded a $15.6 million <COREF ID="15" REF="14">Air Force</COREF> <COREF ID="X84" REF="3">contract</COREF> for radar. 
+
+
+ International Business Machines <COREF ID="X89" REF="2">Corp.</COREF> won a $15.4 million <COREF ID="16" REF="15">Air Force</COREF> <COREF ID="X90" REF="3">contract</COREF> for computers. 
+
+
+ Loral <COREF ID="X93" REF="2">Corp.</COREF> received a $13.3 million <COREF ID="17" REF="X55">Navy</COREF> <COREF ID="X94" REF="3">contract</COREF> for chaff cartridges. 
+
+
+</TXT>

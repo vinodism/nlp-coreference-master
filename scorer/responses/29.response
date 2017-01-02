@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><TXT>
+  890922-0189. 
+ = 890922 
+ 890922-0189. 
+ <COREF ID="X2" REF="1">Nynex</COREF>, Unions Fail to Hold
+@  <COREF ID="X5" REF="6">Talks</COREF> This <COREF ID="X6" REF="5">Week</COREF> on Accord
+@  ----
+@  A Wall Street Journal News Roundup 
+ 09/22/89 
+ WALL STREET JOURNAL (J) 
+ NYN <COREF ID="X21" REF="22">PAC</COREF> LABOR 
+ TELEPHONE SYSTEMS (TLS) 
+
+
+ <COREF ID="1" REF="X2">Nynex Corp.</COREF> and <COREF ID="2">its unions</COREF> haven't held <COREF ID="4">negotiations</COREF> <COREF ID="5" REF="X6">this week</COREF> and haven't scheduled <COREF ID="6" REF="X5">any further talks</COREF> on <COREF ID="7" REF="X55">a new contract to end a seven-week strike</COREF>. 
+
+
+ A <COREF ID="8" REF="15">company</COREF> spokesman said that <COREF ID="9" REF="6">talks</COREF> with the Communications Workers of America and the International Brotherhood of Electrical Workers broke down last weekend. 
+ Since then, neither side has taken steps to resume <COREF ID="12">discussions</COREF>. 
+ <COREF ID="13" REF="20">Union</COREF> spokesmen have said that <COREF ID="14" REF="9">talks</COREF> are stalled over a <COREF ID="15" REF="8">company</COREF> plan to shift some health-care costs to employees. 
+
+
+ The <COREF ID="16" REF="19">CWA</COREF> represents about 40,000 <COREF ID="17" REF="1">Nynex</COREF> employees while the <COREF ID="18">IBEW</COREF> represents 20,000. 
+
+
+ In California, meanwhile, <COREF ID="19" REF="16">CWA</COREF> members must vote by today on a tentative <COREF ID="X48" REF="24">agreement</COREF> between <COREF ID="20" REF="13">union</COREF> and Pacific Telesis negotiators reached last month. 
+ Officials at some <COREF ID="21" REF="20">union</COREF> locals are recommending against the proposed <COREF ID="X55" REF="7">contract</COREF>, raising the possibility that <COREF ID="22" REF="X21">Pac Tel</COREF> and the <COREF ID="23" REF="21">union</COREF> will have to renegotiate parts of <COREF ID="24" REF="X48">the agreement</COREF>. 
+
+
+</TXT>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="coref" default="all">
+  
+  
+  <property file="coref.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*.yarb/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/RCS/**"/>
+    <exclude name="**/SCCS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/rcs/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.war"/>
+    <include name="*.swc"/>
+    <include name="*.apk"/>
+    <include name="*.zip"/>
+    <include name="*.egg"/>
+    <include name="*.ane"/>
+    <include name="*.jar"/>
+    <include name="*.ear"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+    <exclude name="**/?*.aj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.8" value="${jdk.home.1.8}/bin"/>
+  <path id="jdk.classpath.1.8">
+    <fileset dir="${jdk.home.1.8}">
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/ext/cldrdata.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/jaccess.jar"/>
+      <include name="jre/lib/ext/jfxrt.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/nashorn.jar"/>
+      <include name="jre/lib/ext/sunec.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+      <include name="jre/lib/ext/zipfs.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jfr.jar"/>
+      <include name="jre/lib/jfxswt.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+      <include name="lib/ant-javafx.jar"/>
+      <include name="lib/dt.jar"/>
+      <include name="lib/javafx-mx.jar"/>
+      <include name="lib/jconsole.jar"/>
+      <include name="lib/packager.jar"/>
+      <include name="lib/sa-jdi.jar"/>
+      <include name="lib/tools.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.8}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.8}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.8"/>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <pathelement location="${javac2.home}/javac2.jar"/>
+    <pathelement location="${javac2.home}/jdom.jar"/>
+    <pathelement location="${javac2.home}/asm-all.jar"/>
+    <pathelement location="${javac2.home}/jgoodies-forms.jar"/>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  
+  <!-- Module Coref -->
+  
+  <dirname property="module.coref.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.coref" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.coref" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.coref" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.coref" value="-encoding UTF-8 -source 1.5 -target 1.5 ${compiler.args}"/>
+  
+  <property name="coref.output.dir" value="${module.coref.basedir}/out/production/Coref"/>
+  <property name="coref.testoutput.dir" value="${module.coref.basedir}/out/test/Coref"/>
+  
+  <path id="coref.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="coref.module.production.classpath">
+    <path refid="${module.jdk.classpath.coref}"/>
+    
+    <fileset dir="${basedir}/../../Downloads/stanford-corenlp-full-2016-10-31">
+      <patternset refid="library.patterns"/>
+    </fileset>
+    <pathelement location="${basedir}/../../Downloads/guava-14.0.1.jar"/>
+  </path>
+  
+  <path id="coref.runtime.production.module.classpath">
+    <pathelement location="${coref.output.dir}"/>
+    
+    <fileset dir="${basedir}/../../Downloads/stanford-corenlp-full-2016-10-31">
+      <patternset refid="library.patterns"/>
+    </fileset>
+    <pathelement location="${basedir}/../../Downloads/guava-14.0.1.jar"/>
+  </path>
+  
+  <path id="coref.module.classpath">
+    <path refid="${module.jdk.classpath.coref}"/>
+    <pathelement location="${coref.output.dir}"/>
+    
+    <fileset dir="${basedir}/../../Downloads/stanford-corenlp-full-2016-10-31">
+      <patternset refid="library.patterns"/>
+    </fileset>
+    <pathelement location="${basedir}/../../Downloads/guava-14.0.1.jar"/>
+  </path>
+  
+  <path id="coref.runtime.module.classpath">
+    <pathelement location="${coref.testoutput.dir}"/>
+    <pathelement location="${coref.output.dir}"/>
+    
+    <fileset dir="${basedir}/../../Downloads/stanford-corenlp-full-2016-10-31">
+      <patternset refid="library.patterns"/>
+    </fileset>
+    <pathelement location="${basedir}/../../Downloads/guava-14.0.1.jar"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.coref">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.coref">
+    <patternset refid="excluded.from.module.coref"/>
+  </patternset>
+  
+  <path id="coref.module.sourcepath">
+    <dirset dir="${module.coref.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.coref" depends="compile.module.coref.production,compile.module.coref.tests" description="Compile module Coref"/>
+  
+  <target name="compile.module.coref.production" depends="register.custom.compilers" description="Compile module Coref; production classes">
+    <mkdir dir="${coref.output.dir}"/>
+    <javac2 destdir="${coref.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.coref}/javac">
+      <compilerarg line="${compiler.args.coref}"/>
+      <bootclasspath refid="coref.module.bootclasspath"/>
+      <classpath refid="coref.module.production.classpath"/>
+      <src refid="coref.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.coref"/>
+    </javac2>
+    
+    <copy todir="${coref.output.dir}">
+      <fileset dir="${module.coref.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.coref.tests" depends="register.custom.compilers,compile.module.coref.production" description="compile module Coref; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.coref" description="cleanup module">
+    <delete dir="${coref.output.dir}"/>
+    <delete dir="${coref.testoutput.dir}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.coref" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.coref" description="build all modules"/>
+  
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.coref:jar" value="${basedir}/out/artifacts/Coref_jar"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+    <property name="temp.jar.path.Coref.jar" value="${artifacts.temp.dir}/Coref.jar"/>
+  </target>
+  
+  <target name="artifact.coref:jar" depends="init.artifacts, compile.module.coref" description="Build &#39;Coref:jar&#39; artifact">
+    <property name="artifact.temp.output.coref:jar" value="${artifacts.temp.dir}/Coref_jar"/>
+    <mkdir dir="${artifact.temp.output.coref:jar}"/>
+    <jar destfile="${temp.jar.path.Coref.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
+      <zipfileset dir="${coref.output.dir}"/>
+      <zipfileset src="${basedir}/../../Downloads/stanford-corenlp-full-2016-10-31/xom.jar"/>
+      <zipfileset src="${basedir}/../../Downloads/stanford-corenlp-full-2016-10-31/jollyday.jar"/>
+      <zipfileset src="${basedir}/../../Downloads/stanford-corenlp-full-2016-10-31/protobuf.jar"/>
+      <zipfileset src="${basedir}/../../Downloads/stanford-corenlp-full-2016-10-31/ejml-0.23.jar"/>
+      <zipfileset src="${basedir}/../../Downloads/stanford-corenlp-full-2016-10-31/joda-time.jar"/>
+      <zipfileset src="${basedir}/../../Downloads/stanford-corenlp-full-2016-10-31/slf4j-api.jar"/>
+      <zipfileset src="${basedir}/../../Downloads/stanford-corenlp-full-2016-10-31/javax.json.jar"/>
+      <zipfileset src="${basedir}/../../Downloads/stanford-corenlp-full-2016-10-31/slf4j-simple.jar"/>
+      <zipfileset src="${basedir}/../../Downloads/stanford-corenlp-full-2016-10-31/ejml-0.23-src.zip"/>
+      <zipfileset src="${basedir}/../../Downloads/stanford-corenlp-full-2016-10-31/xom-1.2.10-src.jar"/>
+      <zipfileset src="${basedir}/../../Downloads/stanford-corenlp-full-2016-10-31/joda-time-2.9-sources.jar"/>
+      <zipfileset src="${basedir}/../../Downloads/stanford-corenlp-full-2016-10-31/jollyday-0.4.9-sources.jar"/>
+      <zipfileset src="${basedir}/../../Downloads/stanford-corenlp-full-2016-10-31/stanford-corenlp-3.7.0.jar"/>
+      <zipfileset src="${basedir}/../../Downloads/stanford-corenlp-full-2016-10-31/javax.json-api-1.0-sources.jar"/>
+      <zipfileset src="${basedir}/../../Downloads/stanford-corenlp-full-2016-10-31/stanford-corenlp-3.7.0-models.jar"/>
+      <zipfileset src="${basedir}/../../Downloads/stanford-corenlp-full-2016-10-31/stanford-corenlp-3.7.0-javadoc.jar"/>
+      <zipfileset src="${basedir}/../../Downloads/stanford-corenlp-full-2016-10-31/stanford-corenlp-3.7.0-sources.jar"/>
+      <zipfileset src="${basedir}/../../Downloads/guava-14.0.1.jar"/>
+    </jar>
+    <copy file="${temp.jar.path.Coref.jar}" tofile="${artifact.temp.output.coref:jar}/Coref.jar"/>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.coref:jar" description="Build all artifacts">
+    <mkdir dir="${artifact.output.coref:jar}"/>
+    <copy todir="${artifact.output.coref:jar}">
+      <fileset dir="${artifact.temp.output.coref:jar}"/>
+    </copy>
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>

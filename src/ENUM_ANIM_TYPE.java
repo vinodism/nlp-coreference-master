@@ -1,0 +1,4 @@
+
+public enum ENUM_ANIM_TYPE {
+    ANIMATE, INANIMATE, UNKNOWN
+}

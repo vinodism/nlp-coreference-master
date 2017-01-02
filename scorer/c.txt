@@ -1,0 +1,60 @@
+22
+19
+76
+47
+20
+14
+10
+66
+46
+49
+67
+74
+16
+68
+88
+69
+34
+18
+55
+36
+24
+77
+83
+11
+25
+2,
+72
+87
+51
+75
+60
+9
+31
+17
+61
+42
+65
+73
+62
+43
+6
+56
+32
+63
+35
+71
+64
+29
+81
+Number of pronouns resolved: 7 (0.47)
+Number of common nouns resolved: 20 (0.77)
+Number of proper nouns resolved: 22 (0.79)
+Response resolutions: 83
+Truth resolutions: 69
+Total correct: 49
+Document b13 Score:  0.71
+
+-------------------------------------------------
+Final accuracy score: 0.7101
+-------------------------------------------------
